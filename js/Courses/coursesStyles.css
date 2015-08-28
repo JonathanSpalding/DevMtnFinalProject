@@ -38,7 +38,7 @@ a:hover{
 #courseList {
   background-color: #000000;
 	width: 15%;
-	position: relative;
+	position: absolute;
 	top: 50px;
 	height: 100%;
   opacity: .9;

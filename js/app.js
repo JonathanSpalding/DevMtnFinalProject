@@ -14,11 +14,20 @@ app.config(function($routeProvider){
       templateUrl: 'js/Courses/coursesTmpl.html',
       controller: 'coursesCtrl'
     })
-    .when('/courses/utah/Bicentennial_Park', {
+    .when('/courses/Bicentennial_Park', {
       templateUrl: 'js/Courses/coursesTmpl.html',
       controller: 'coursesCtrl'
     })
     .otherwise({
       redirectTo: '/'
     })
+});
+
+$(document).ready(function() {
+
+    $("button[id='newGame']").click(function() {
+        var domElement = $('<p contenteditable="true">Type Location Here</p>');
+        $(this).after(domElement);
+    });
+
 });
