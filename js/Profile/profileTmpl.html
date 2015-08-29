@@ -7,13 +7,20 @@
   <a href="#/profile"> Profile </a>
   <a href="#/courses"> Courses </a>
 </header>
-<body>
+<body ng-controller="profileCtrl">
 	<!-- start new match. -->
-	<button id="newGame">New Game</button>
+	<!-- <button id="newGame">New Game</button>
+
+<p contenteditable="true" ng-click="clearName()" ng-model="playerName">Player Name</p> -->
 
 
+<div ng-repeat="field in fields">
+	{{field}}<input ng-model=filters[field] />
+</div>
 
-<p contenteditable="true" ng-click="clearName()" ng-model="playerName">Player Name</p>
+<hr>
+<h3>Filter</h3>
+{{filters}}
 
 
 
