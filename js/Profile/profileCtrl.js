@@ -1,7 +1,7 @@
 var app = angular.module('frolfZone');
 
 app.controller('profileCtrl', function($scope){
-
+  $scope.count = 0;
 //   $("#newGame").click(function() {
 //       var location = $('<p contenteditable="true">Type Location Here</p>');
 //       $(this).after(location);

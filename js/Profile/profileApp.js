@@ -1,9 +1,5 @@
 var app = angular.module('frolfZone');
 
-function profileCtrl($scope) {
-	$scope.count = 0;
-}
-
 //Directive that returns an element which adds buttons on click which show an alert on click
 app.directive("newGameButton", function(){
 	return {
@@ -12,7 +8,7 @@ app.directive("newGameButton", function(){
 	}
 });
 
-//Directive for adding buttons on click that show an alert on click
+//Directive for adding a new game template
 app.directive("addbuttons", function($compile){
 	return function(scope, element, attrs){
 		element.bind("click", function(){
@@ -24,7 +20,7 @@ app.directive("addbuttons", function($compile){
 
 
 
-//Directive for showing an alert on click
+//Directive for showing an alert on click (this will be deleted soon)
 app.directive("alert", function(){
 	return function(scope, element, attrs){
 		element.bind("click", function(){
@@ -35,4 +31,11 @@ app.directive("alert", function(){
 			alert("This is alert #"+attrs.alert);
 		});
 	};
+});
+
+app.directive("addPlayerButton", function() {
+  return{
+    restrict: "E",
+    template: "<button>add Player #"+scope.count+"</button>"
+  }
 });
