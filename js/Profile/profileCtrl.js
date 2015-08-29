@@ -19,25 +19,21 @@ app.controller('profileCtrl', function($scope){
 //     });
 // });
 
-$("newGame").click(function() {
-
-})
-
-$scope.test = function(text) {
-  alert(text);
-}
-
-$scope.clearName = function() {
-  console.log('clearing!');
-  $scope.playerName = '';
-}
-
-$scope.filters={};
-$scope.fields=["Location","Player Name","holes"];
-
-
+// $("newGame").click(function() {
+//   fields.push("Player Name");
+// })
+//
+//
+//
+// $scope.filters={};
+// $scope.fields=["Location","Player Name","holes"];
+//
+//
 // $scope.hideGame = function() {
 //         $scope.hideGame = !$scope.hideGame;
 //     };
+
+
+
 
 });

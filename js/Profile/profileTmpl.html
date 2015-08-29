@@ -9,19 +9,25 @@
 </header>
 <body ng-controller="profileCtrl">
 	<!-- start new match. -->
-<button id="newGame" ng-click="hideGame = false">New Game</button>
+<!-- <button id="newGame" ng-click="hideGame = false">New Game</button> -->
 
 	<!--<p contenteditable="true" ng-click="clearName()" ng-model="playerName">Player Name</p> -->
 
-<div ng-hide="hideGame">
+<!-- <div ng-hide="hideGame">
 	<div ng-repeat="field in fields">
 		{{field}}<input ng-model=filters[field]></input>
 	</div>
 	<h3>New Game</h3>
-	<button ng-click="test(game)">Add Player</button>
+	<button ng-click="addPlayer()">Add Player</button>
 	{{filters}}
 
 	<button id="submit">Submit</button>
-</div>
+</div> -->
+
+<new-game-button></new-game-button>
+<add-player-button></add-player-button>
+
+<div id="space-for-new-game"></div>
+
 
 </body>
