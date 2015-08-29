@@ -9,19 +9,19 @@
 </header>
 <body ng-controller="profileCtrl">
 	<!-- start new match. -->
-	<!-- <button id="newGame">New Game</button>
+<button id="newGame" ng-click="hideGame = false">New Game</button>
 
-<p contenteditable="true" ng-click="clearName()" ng-model="playerName">Player Name</p> -->
+	<!--<p contenteditable="true" ng-click="clearName()" ng-model="playerName">Player Name</p> -->
 
+<div ng-hide="hideGame">
+	<div ng-repeat="field in fields">
+		{{field}}<input ng-model=filters[field]></input>
+	</div>
+	<h3>New Game</h3>
+	<button ng-click="test(game)">Add Player</button>
+	{{filters}}
 
-<div ng-repeat="field in fields">
-	{{field}}<input ng-model=filters[field] />
+	<button id="submit">Submit</button>
 </div>
-
-<hr>
-<h3>Filter</h3>
-{{filters}}
-
-
 
 </body>

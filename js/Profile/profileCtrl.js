@@ -18,13 +18,26 @@ app.controller('profileCtrl', function($scope){
 //       $(this).after(playerName);
 //     });
 // });
+
+$("newGame").click(function() {
+
+})
+
+$scope.test = function(text) {
+  alert(text);
+}
+
 $scope.clearName = function() {
   console.log('clearing!');
   $scope.playerName = '';
 }
 
 $scope.filters={};
-$scope.fields=["name","address","phone","state"];
+$scope.fields=["Location","Player Name","holes"];
 
+
+// $scope.hideGame = function() {
+//         $scope.hideGame = !$scope.hideGame;
+//     };
 
 });
