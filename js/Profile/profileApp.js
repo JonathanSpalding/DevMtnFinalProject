@@ -1,41 +1,42 @@
 var app = angular.module('frolfZone');
 
-//Directive that returns an element which adds buttons on click which show an alert on click
+//Directive that returns an element which adds a new game template
 app.directive("newGameButton", function(){
 	return {
 		restrict: "E",
-		template: "<button addbuttons>Click to add new game</button>"
+		template: "<button startgame>Click to add new game</button>"
 	}
 });
 
 //Directive for adding a new game template
-app.directive("addbuttons", function($compile){
-	return function(scope, element, attrs){
-		element.bind("click", function(){
-			scope.count++;
-			angular.element(document.getElementById('space-for-new-game')).append($compile("<div><input class='location' placeholder='location'></input><button class='addPlayer' data-alert="+scope.count+">Add Player #"+scope.count+"</button><input class='player' placeholder='Player"+scope.count+"'></input></div>")(scope));
-		});
+app.directive("startgame", function($compile){
+for (var i = 0; i < 1; i++){
+		return function(scope, element, attrs){
+			element.bind("click", function(){
+				scope.count++;
+				angular.element(document.getElementById('space-for-new-game')).append($compile("<div><input class='location' placeholder='location'></input></div>")(scope));
+			});
+
 	};
+}
 });
 
-
-
-//Directive for showing an alert on click (this will be deleted soon)
-app.directive("alert", function(){
-	return function(scope, element, attrs){
-		element.bind("click", function(){
-			console.log(attrs);
-
- <!-- angular.element(document.getElementById('space-for-new-game')).append($compile("<input></input>")(scope)); -->
-
-			alert("This is alert #"+attrs.alert);
-		});
-	};
-});
-
+//Directive that returns an element which adds input for a new player
 app.directive("addPlayerButton", function() {
   return{
     restrict: "E",
-    template: "<button>add Player #"+scope.count+"</button>"
+    template: "<button newplayer>Add Player</button>"
   }
 });
+
+//directive for adding new players
+app.directive("newplayer", function($compile){
+	return function(scope, element, attrs){
+		element.bind("click", function() {
+			scope.count++;
+			angular.element(document.getElementById('space-for-new-game')).append($compile("<input placeholder='Player #"+scope.count+"'></input>")(scope));
+		});
+	};
+});
+
+// element(by.model('new-game-button')).click();

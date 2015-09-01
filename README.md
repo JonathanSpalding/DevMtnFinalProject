@@ -2,7 +2,7 @@
 
 This is my final project for DevMountain.
 
-It's a website for frisbee golfers. Right now it's got three pages. 
+It's a website for frisbee golfers. Right now it's got three pages.
 
 The home page just gives some info about the site and what you can do.
 
