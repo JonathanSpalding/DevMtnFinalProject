@@ -4,7 +4,7 @@ var app = angular.module('frolfZone');
 app.directive("newGameButton", function(){
 	return {
 		restrict: "E",
-		template: "<button startgame>Click to add new game</button>"
+		template: "<div startgame><button>Click to add new game</button></div>"
 	}
 });
 
@@ -13,8 +13,7 @@ app.directive("startgame", function($compile){
 for (var i = 0; i < 1; i++){
 		return function(scope, element, attrs){
 			element.bind("click", function(){
-				scope.count++;
-				angular.element(document.getElementById('space-for-new-game')).append($compile("<div><input class='location' placeholder='location'></input></div>")(scope));
+				angular.element(document.getElementById('space-for-new-game')).append($compile("<ul><input class='location' placeholder='location'></input></ul>")(scope));
 			});
 
 	};
@@ -34,7 +33,7 @@ app.directive("newplayer", function($compile){
 	return function(scope, element, attrs){
 		element.bind("click", function() {
 			scope.count++;
-			angular.element(document.getElementById('space-for-new-game')).append($compile("<input placeholder='Player #"+scope.count+"'></input>")(scope));
+			angular.element(document.getElementById('space-for-players')).append($compile("<ul><input placeholder='Player #"+scope.count+"'></input></ul>")(scope));
 		});
 	};
 });
