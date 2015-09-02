@@ -33,7 +33,20 @@ app.controller('profileCtrl', function($scope){
 //         $scope.hideGame = !$scope.hideGame;
 //     };
 
+//Step 2 of Registration
+$scope.register = function () {
+  return authService.register($scope.details, loginCallback);
+};
 
+$scope.status = 'Register';
+$scope.showReg = function(){
+  if($scope.status === 'Register'){
+    $scope.status = 'Login';
+  } else {
+    $scope.status = 'Register';
+  }
+  $scope.reg = !$scope.reg;
+};
 
 
 });
