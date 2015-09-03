@@ -1,4 +1,4 @@
-var app = angular.module('frolfZone', ['ngRoute']);
+var app = angular.module('frolfZone', ['ngRoute', 'firebase']);
 
 app.config(function($routeProvider){
   $routeProvider

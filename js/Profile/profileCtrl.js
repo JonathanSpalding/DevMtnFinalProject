@@ -1,7 +1,35 @@
 var app = angular.module('frolfZone');
 
-app.controller('profileCtrl', function($scope){
+app.controller('profileCtrl', function($scope, authService, $location){ //, authService, $location
   $scope.count = 0;
+
+
+  //Step 4 of Registration
+  var loginCallback = function(user){
+    user.uid = user.uid.replace('simplelogin:', '');
+    $location.path('/profile' + user.uid)
+  };
+
+  $scope.login = function () {
+    return authService.login($scope.details, loginCallback);
+  };
+
+  //Step 2 of Registration
+  $scope.register = function () {
+    return authService.register($scope.details, loginCallback);
+  };
+
+  $scope.status = 'Register';
+  $scope.showReg = function(){
+    if($scope.status === 'Register'){
+      $scope.status = 'Login';
+    } else {
+      $scope.status = 'Register';
+    }
+    $scope.reg = !$scope.reg;
+  };
+
+
 //   $("#newGame").click(function() {
 //       var location = $('<p contenteditable="true">Type Location Here</p>');
 //       $(this).after(location);
@@ -33,20 +61,7 @@ app.controller('profileCtrl', function($scope){
 //         $scope.hideGame = !$scope.hideGame;
 //     };
 
-//Step 2 of Registration
-$scope.register = function () {
-  return authService.register($scope.details, loginCallback);
-};
 
-$scope.status = 'Register';
-$scope.showReg = function(){
-  if($scope.status === 'Register'){
-    $scope.status = 'Login';
-  } else {
-    $scope.status = 'Register';
-  }
-  $scope.reg = !$scope.reg;
-};
 
 
 });
