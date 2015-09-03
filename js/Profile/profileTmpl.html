@@ -7,14 +7,16 @@
 	    <a href="" ng-click="showReg()">{{status}}</a>
 	    <div ng-show="!reg">
         <h2>Login</h2>
+				<form ng-submit="login()">
           <p ng-show="error" class="text-danger">{{ error }}</p>
           <input type="email" placeholder="Email" class="form-control" ng-model="details.email" required><br>
           <input type="password" placeholder="Password" class="form-control" ng-model="details.password" required><br>
           <input type="submit" class="btn btn-info" value="Sign In">
-	    </div>
+	    </form>
+			</div>
 	    <div ng-show="reg">
 	        <h2>Register</h2>
-	        <!-- Step One Of Registration-->
+
 	        <form ng-submit="register()">
 	            <p ng-show="error" class="text-danger">{{ error }}</p>
 	            <input class="form-control" type="text" placeholder="Full Name" ng-model="details.name" required /><br />
