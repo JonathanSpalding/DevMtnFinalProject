@@ -9,6 +9,14 @@ app.config(function($routeProvider){
     .when('/profile', {
       templateUrl: 'js/Profile/profileTmpl.html',
       controller: 'profileCtrl'
+    //   resolve: {
+    //   userReference: function(firebaseService, $route){
+    //   return firebaseService.getUser($route.current.params.userId);
+    // }
+    })
+    .when('/login', {
+      templateUrl: 'js/Login/loginTmpl.html',
+      controller: 'loginCtrl'
     })
     .when('/courses', {
       templateUrl: 'js/Courses/coursesTmpl.html',
