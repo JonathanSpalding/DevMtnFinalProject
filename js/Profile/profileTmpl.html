@@ -1,5 +1,5 @@
-<header id="header-content">
-	<title>Frolf Zone Profile</title>
+<body>
+
 
   <link rel="stylesheet" type="text/css" href="js/Profile/profileStyles.css">
 
@@ -9,8 +9,7 @@
 	<a href="#/courses"> Courses </a>
 </div>
 
-</header>
-<body>
+
 
 	<h1>Dashboard</h1>
 
@@ -20,7 +19,7 @@
 
 	<button ng-click="update()">Update Profile</button>
 
-	<input ng-model="thing.name" />
+	<input ng-submit="pressedEnter()" ng-model="thing.name"></input>
 	<button ng-click="addThing()">Add Thing</button>
 	<div ng-repeat="thing in things">
 		{{thing.name}}

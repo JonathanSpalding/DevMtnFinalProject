@@ -8,11 +8,15 @@ app.config(function($routeProvider){
     })
     .when('/profile', {
       templateUrl: 'js/Profile/profileTmpl.html',
-      controller: 'profileCtrl'
-    //   resolve: {
-    //   userReference: function(firebaseService, $route){
-    //   return firebaseService.getUser($route.current.params.userId);
-    // }
+      controller: 'profileCtrl',
+      resolve: {
+        userReference: function(firebaseService, $route){
+          return firebaseService.getUser($route.current.params.userId);
+        },
+        thingsReference: function(firebaseService, $route){
+          return firebaseService.getThings($route.current.params.userId);
+        }
+      }
     })
     .when('/login', {
       templateUrl: 'js/Login/loginTmpl.html',
