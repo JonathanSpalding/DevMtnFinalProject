@@ -2,7 +2,7 @@ var app = angular.module('frolfZone');
 
 app.service('authService', function($firebaseAuth){
   //Just a reference to the firebase endpoint
-  var firebaseUrl = 'https://frolfzone.firebaseio.com/'
+  var firebaseUrl = 'https://frolfzone.firebaseio.com/';
 
   //Creates an object using the Firebase Constructor with our endpoint passed in
   var fbRef = new Firebase(firebaseUrl);

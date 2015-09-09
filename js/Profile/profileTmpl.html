@@ -9,30 +9,26 @@
 	<a href="#/courses"> Courses </a>
 </div>
 
+<h1>Dashboard</h1>
 
+<p>{{profile.name}}</p>
 
-	<h1>Dashboard</h1>
+<input ng-model="profile.name"/>
 
-	<p>{{profile.name}}</p>
+<button ng-click="update()">Update Profile</button>
 
-	<input ng-model="profile.name"/>
+<input ng-submit="pressedEnter()" ng-model="thing.name"></input>
+<button ng-click="addThing()">Add Thing</button>
+<div ng-repeat="thing in things">
+	{{thing.name}}
+	<button ng-click="removeThing(thing)">Destroy</button>
+</div>
 
-	<button ng-click="update()">Update Profile</button>
-
-	<input ng-submit="pressedEnter()" ng-model="thing.name"></input>
-	<button ng-click="addThing()">Add Thing</button>
-	<div ng-repeat="thing in things">
-		{{thing.name}}
-		<button ng-click="removeThing(thing)">Destroy</button>
-	</div>
-
-
-
-<div style='z-index: 1' class="creatingGame">
+<!-- <div style='z-index: 1' class="creatingGame">
 	<new-game-button ng-click="toggle()"></new-game-button>
 	<add-player-button></add-player-button>
 	<div id="space-for-players"></div>
 	<div id="space-for-new-game"></div>
-</div>
+</div> -->
 
 </body>

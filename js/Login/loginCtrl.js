@@ -3,7 +3,7 @@ var app = angular.module('frolfZone');
 app.controller('loginCtrl', function($scope, authService, $location){
   var loginCallback = function(user){
     user.uid = user.uid.replace('simplelogin:', '');
-    $location.path('/profile')
+    $location.path('/profile/' + user.uid)
   };
 
   $scope.login = function () {
