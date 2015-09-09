@@ -42,5 +42,4 @@ $(document).ready(function() {
         var domElement = $('<p contenteditable="true">Type Location Here</p>');
         $(this).after(domElement);
     });
-
 });
